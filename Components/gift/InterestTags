@@ -1,0 +1,40 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Sparkles, X, Plus } from 'lucide-react';
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
+const suggestedInterests = [
+  'Спорт', 'Музыка', 'Игры', 'Книги', 'Путешествия', 'Кулинария',
+  'Фотография', 'Искусство', 'Технологии', 'Мода', 'Кино', 'Природа',
+  'Йога', 'Танцы', 'Рукоделие', 'Садоводство', 'Коллекционирование'
+];
+
+export default function InterestTags({ interests, onInterestsChange, isDark }) {
+  const [customInput, setCustomInput] = React.useState('');
+
+  const toggleInterest = (interest) => {
+    if (interests.includes(interest)) {
+      onInterestsChange(interests.filter(i => i !== interest));
+    } else {
+      onInterestsChange([...interests, interest]);
+    }
+  };
+
+  const addCustomInterest = () => {
+    const trimmed = customInput.trim();
+    if (trimmed && !interests.includes(trimmed)) {
+      onInterestsChange([...interests, trimmed]);
+      setCustomInput('');
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className={`rounded-3xl p-6 shadow-lg border transition-colors duration-500 ${isDark ? 'bg-[#241830] border-[#3b2d4d]' : 'bg-white border-gray-100'}`}
+    >
+      <div className="flex items-center gap-3 mb-4">
+ 
