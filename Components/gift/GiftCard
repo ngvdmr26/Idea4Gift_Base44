@@ -1,0 +1,40 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Gift, Sparkles, Heart, Star, Gem, Music, Gamepad2, Book, Camera, Palette, Dumbbell, Utensils, Plane, Watch, Shirt } from 'lucide-react';
+
+const categoryIcons = {
+  default: Gift,
+  luxury: Gem,
+  music: Music,
+  gaming: Gamepad2,
+  books: Book,
+  photo: Camera,
+  art: Palette,
+  sport: Dumbbell,
+  food: Utensils,
+  travel: Plane,
+  accessories: Watch,
+  fashion: Shirt,
+  love: Heart,
+  special: Star,
+};
+
+const iconColors = [
+  'from-violet-500 to-fuchsia-500',
+  'from-blue-500 to-cyan-500',
+  'from-emerald-500 to-teal-500',
+  'from-orange-500 to-amber-500',
+  'from-rose-500 to-pink-500',
+];
+
+// Marketplace logos as SVG components
+const OzonLogo = () => (
+  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
+    <circle cx="12" cy="12" r="10" fill="#005BFF"/>
+    <text x="12" y="16" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">O</text>
+  </svg>
+);
+
+const WBLogo = () => (
+  <svg viewBox="0 0 24 24" className="w-4 h-4">
+ 
