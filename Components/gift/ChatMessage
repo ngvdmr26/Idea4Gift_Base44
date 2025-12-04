@@ -1,0 +1,40 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Bot, User } from 'lucide-react';
+
+export default function ChatMessage({ message, isBot, isDark }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className={`flex gap-3 ${isBot ? 'justify-start' : 'justify-end'}`}
+    >
+      {isBot && (
+        <div className={`w-9 h-9 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-lg flex-shrink-0 ${isDark ? 'shadow-violet-900/50' : 'shadow-violet-200'}`}>
+          <Bot className="w-5 h-5 text-white" />
+        </div>
+      )}
+      
+      <div
+        className={`max-w-[80%] px-4 py-3 rounded-2xl transition-colors duration-500 ${
+          isBot
+            ? isDark 
+              ? 'bg-[#241830] shadow-sm border border-[#3b2d4d] text-gray-100'
+              : 'bg-white shadow-sm border border-gray-100 text-gray-800'
+            : isDark
+              ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-900/50'
+              : 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-lg shadow-violet-200'
+        }`}
+      >
+        <p className="text-sm leading-relaxed whitespace-pre-wrap">{message}</p>
+      </div>
+      
+      {!isBot && (
+        <div className={`w-9 h-9 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-500 ${isDark ? 'bg-gradient-to-br from-[#3b2d4d] to-[#4a3660]' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
+          <User className={`w-5 h-5 ${isDark ? 'text-violet-300' : 'text-gray-600'}`} />
+        </div>
+      )}
+    </motion.div>
+  );
+}
