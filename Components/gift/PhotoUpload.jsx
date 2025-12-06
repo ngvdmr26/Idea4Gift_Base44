@@ -37,15 +37,15 @@ export default function PhotoUpload({ photos, onPhotosChange, isUploading, setIs
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`rounded-3xl p-6 shadow-lg border transition-colors duration-500 ${isDark ? 'bg-[#241830] border-[#3b2d4d]' : 'bg-white border-gray-100'}`}
+      className="rounded-3xl p-6 shadow-lg border bg-white border-emerald-100"
     >
       <div className="flex items-center gap-3 mb-4">
-        <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg ${isDark ? 'shadow-rose-900/50' : 'shadow-rose-200'}`}>
+        <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-200">
           <Camera className="w-5 h-5 text-white" />
         </div>
         <div>
-          <h3 className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Фото для анализа</h3>
-          <p className={`text-sm ${isDark ? 'text-violet-300' : 'text-gray-500'}`}>Загрузите фото увлечений</p>
+          <h3 className="font-semibold text-gray-900">Фото для анализа</h3>
+          <p className="text-sm text-emerald-600">Загрузите фото увлечений</p>
         </div>
       </div>
 
@@ -95,15 +95,15 @@ export default function PhotoUpload({ photos, onPhotosChange, isUploading, setIs
         onClick={() => fileInputRef.current?.click()}
         disabled={isUploading}
         variant="outline"
-        className={`w-full h-24 rounded-2xl border-2 border-dashed transition-all duration-300 group ${isDark ? 'border-[#3b2d4d] hover:border-violet-500 hover:bg-violet-900/20' : 'border-gray-200 hover:border-violet-300 hover:bg-violet-50'}`}
+        className="w-full h-24 rounded-2xl border-2 border-dashed transition-all duration-300 group border-emerald-200 hover:border-emerald-400 hover:bg-emerald-50"
       >
         {isUploading ? (
-          <div className="flex items-center gap-2 text-violet-500">
+          <div className="flex items-center gap-2 text-emerald-600">
             <Loader2 className="w-5 h-5 animate-spin" />
             <span>Загрузка...</span>
           </div>
         ) : (
-          <div className={`flex flex-col items-center gap-2 group-hover:text-violet-500 transition-colors ${isDark ? 'text-violet-400' : 'text-gray-400'}`}>
+          <div className="flex flex-col items-center gap-2 group-hover:text-emerald-600 transition-colors text-gray-400">
             <ImagePlus className="w-8 h-8" />
             <span className="text-sm font-medium">Добавить фото</span>
           </div>
