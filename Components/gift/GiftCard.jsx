@@ -20,33 +20,36 @@ const categoryIcons = {
 };
 
 const iconColors = [
-  'from-violet-500 to-fuchsia-500',
-  'from-blue-500 to-cyan-500',
   'from-emerald-500 to-teal-500',
-  'from-orange-500 to-amber-500',
-  'from-rose-500 to-pink-500',
+  'from-teal-500 to-green-500',
+  'from-green-500 to-emerald-600',
+  'from-emerald-600 to-teal-600',
+  'from-teal-600 to-green-700',
 ];
 
-// Marketplace logos as SVG components
+// Marketplace logos
 const OzonLogo = () => (
-  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
-    <circle cx="12" cy="12" r="10" fill="#005BFF"/>
-    <text x="12" y="16" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">O</text>
-  </svg>
+  <img 
+    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69316384b77fea929baab6f9/b83e24aec_image.png" 
+    alt="Ozon" 
+    className="w-full h-full object-cover"
+  />
 );
 
 const WBLogo = () => (
-  <svg viewBox="0 0 24 24" className="w-4 h-4">
-    <circle cx="12" cy="12" r="10" fill="#CB11AB"/>
-    <text x="12" y="16" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">WB</text>
-  </svg>
+  <img 
+    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69316384b77fea929baab6f9/144e74c28_image.png" 
+    alt="Wildberries" 
+    className="w-full h-full object-cover"
+  />
 );
 
 const YMLogo = () => (
-  <svg viewBox="0 0 24 24" className="w-4 h-4">
-    <circle cx="12" cy="12" r="10" fill="#FFCC00"/>
-    <text x="12" y="16" textAnchor="middle" fill="#000" fontSize="10" fontWeight="bold">Я</text>
-  </svg>
+  <img 
+    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69316384b77fea929baab6f9/74b4776be_image.png" 
+    alt="Яндекс Маркет" 
+    className="w-full h-full object-cover"
+  />
 );
 
 export default function GiftCard({ gift, index, isDark }) {
@@ -88,8 +91,8 @@ export default function GiftCard({ gift, index, isDark }) {
         <h3 className={`font-semibold text-sm leading-tight line-clamp-2 mb-1.5 ${isDark ? 'text-white' : 'text-gray-900'}`}>
           {gift.name}
         </h3>
-        
-        <p className={`text-xs line-clamp-2 mb-3 ${isDark ? 'text-violet-300' : 'text-gray-500'}`}>
+
+        <p className={`text-xs leading-relaxed mb-3 ${isDark ? 'text-violet-300' : 'text-gray-500'}`}>
           {gift.description}
         </p>
         
@@ -102,14 +105,14 @@ export default function GiftCard({ gift, index, isDark }) {
                 href={marketplace.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex-1 flex items-center justify-center gap-1 py-2 rounded-lg text-white text-xs font-medium transition-colors ${marketplace.bg}`}
+                className="flex-1 overflow-hidden rounded-xl h-10 transition-transform hover:scale-105"
               >
                 <marketplace.Logo />
               </a>
             ))}
           </div>
         ) : (
-          <div className={`text-center py-2 rounded-lg text-xs ${isDark ? 'bg-violet-900/30 text-violet-300' : 'bg-gray-100 text-gray-500'}`}>
+          <div className="text-center py-2 rounded-lg text-xs bg-emerald-50 text-emerald-600">
             <Sparkles className="w-3 h-3 inline mr-1" />
             Найти самостоятельно
           </div>
