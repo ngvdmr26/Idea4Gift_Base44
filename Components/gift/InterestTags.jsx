@@ -37,7 +37,7 @@ export default function InterestTags({ interests, onInterestsChange, isDark }) {
       className={`rounded-3xl p-6 shadow-lg border transition-colors duration-500 ${isDark ? 'bg-[#241830] border-[#3b2d4d]' : 'bg-white border-gray-100'}`}
     >
       <div className="flex items-center gap-3 mb-4">
-        <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-lg ${isDark ? 'shadow-amber-900/50' : 'shadow-amber-200'}`}>
+        <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-200">
           <Sparkles className="w-5 h-5 text-white" />
         </div>
         <div>
@@ -57,7 +57,7 @@ export default function InterestTags({ interests, onInterestsChange, isDark }) {
             >
               <Badge
                 variant="secondary"
-                className="bg-gradient-to-r from-violet-100 to-fuchsia-100 text-violet-700 border-violet-200 px-3 py-1.5 cursor-pointer hover:bg-violet-200 transition-colors"
+                className="bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 border-emerald-200 px-3 py-1.5 cursor-pointer hover:bg-emerald-200 transition-colors"
                 onClick={() => toggleInterest(interest)}
               >
                 {interest}
@@ -79,7 +79,7 @@ export default function InterestTags({ interests, onInterestsChange, isDark }) {
         <Button
           onClick={addCustomInterest}
           size="icon"
-          className="rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:opacity-90"
+          className="rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:opacity-90"
         >
           <Plus className="w-4 h-4" />
         </Button>
