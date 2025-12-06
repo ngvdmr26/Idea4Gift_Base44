@@ -17,23 +17,23 @@ export default function BudgetSlider({ min, max, onMinChange, onMaxChange, isDar
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`rounded-3xl p-6 shadow-lg border transition-colors duration-500 ${isDark ? 'bg-[#241830] border-[#3b2d4d]' : 'bg-white border-gray-100'}`}
+      className="rounded-3xl p-6 shadow-lg border bg-white border-emerald-100"
     >
       <div className="flex items-center gap-3 mb-6">
-        <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg ${isDark ? 'shadow-emerald-900/50' : 'shadow-emerald-200'}`}>
+        <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-200">
           <Wallet className="w-5 h-5 text-white" />
         </div>
         <div>
-          <h3 className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Бюджет на подарок</h3>
-          <p className={`text-sm ${isDark ? 'text-violet-300' : 'text-gray-500'}`}>Выберите ценовой диапазон</p>
+          <h3 className="font-semibold text-gray-900">Бюджет на подарок</h3>
+          <p className="text-sm text-emerald-600">Выберите ценовой диапазон</p>
         </div>
       </div>
 
       <div className="space-y-6">
         <div>
           <div className="flex justify-between mb-3">
-            <span className={`text-sm ${isDark ? 'text-violet-300' : 'text-gray-500'}`}>От</span>
-            <span className={`text-sm font-semibold ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`}>{formatPrice(min)}</span>
+            <span className="text-sm text-gray-500">От</span>
+            <span className="text-sm font-semibold text-emerald-600">{formatPrice(min)}</span>
           </div>
           <Slider
             value={[minIndex]}
@@ -46,22 +46,22 @@ export default function BudgetSlider({ min, max, onMinChange, onMaxChange, isDar
 
         <div>
           <div className="flex justify-between mb-3">
-            <span className={`text-sm ${isDark ? 'text-violet-300' : 'text-gray-500'}`}>До</span>
-            <span className={`text-sm font-semibold ${isDark ? 'text-violet-400' : 'text-violet-600'}`}>{formatPrice(max)}</span>
+            <span className="text-sm text-gray-500">До</span>
+            <span className="text-sm font-semibold text-teal-600">{formatPrice(max)}</span>
           </div>
           <Slider
             value={[maxIndex]}
             onValueChange={(v) => onMaxChange(budgetRanges[v[0]])}
             max={budgetRanges.length - 1}
             step={1}
-            className="[&_[role=slider]]:bg-gradient-to-r [&_[role=slider]]:from-violet-400 [&_[role=slider]]:to-fuchsia-500 [&_[role=slider]]:border-0 [&_[role=slider]]:shadow-lg"
+            className="[&_[role=slider]]:bg-gradient-to-r [&_[role=slider]]:from-teal-400 [&_[role=slider]]:to-green-500 [&_[role=slider]]:border-0 [&_[role=slider]]:shadow-lg"
           />
         </div>
       </div>
 
-      <div className={`mt-6 rounded-2xl p-4 text-center ${isDark ? 'bg-gradient-to-r from-violet-900/50 to-fuchsia-900/50' : 'bg-gradient-to-r from-violet-50 to-fuchsia-50'}`}>
-        <p className={`text-sm ${isDark ? 'text-violet-300' : 'text-gray-600'}`}>Ваш бюджет:</p>
-        <p className="text-lg font-bold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+      <div className="mt-6 rounded-2xl p-4 text-center bg-gradient-to-r from-emerald-50 to-teal-50">
+        <p className="text-sm text-gray-600">Ваш бюджет:</p>
+        <p className="text-lg font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
           {formatPrice(min)} — {formatPrice(max)}
         </p>
       </div>
